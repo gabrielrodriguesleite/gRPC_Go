@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+option go_package = "gRPC_Go/helloworld";
+
+package helloworld;
+
+// Definição do serviço
+service Greeter {
+  // chamada no cliente ?
+  rpc SayHello (HelloRequest) returns (HelloReply) {}
+}
+
+
+// mensagem enviada pelo cliente
+message HelloRequest {
+  string name = 1;
+}
+
+// mensagem enviada pelo servidor
+message HelloReply {
+  string message = 1;
+}
