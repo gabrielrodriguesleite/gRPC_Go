@@ -32,6 +32,18 @@ func (s *server) SayHello(ctx context.Context, in *pb.HelloRequest) (*pb.HelloRe
 
 }
 
+// ----- Ampliação INICIO -----
+func (s *server) SayHelloAgain(ctx context.Context, in *pb.HelloRequest) (*pb.HelloReply, error) {
+
+	//imprime um log na saída padrão do server
+	log.Printf("Received: %v", in.GetName())
+
+	// roda a resposta da nova requisição
+	return &pb.HelloReply{Message: "Hello again " + in.GetName()}, nil
+}
+
+// ----- Ampliação FIM -----
+
 func main() {
 
 	flag.Parse()
