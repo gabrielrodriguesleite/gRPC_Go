@@ -51,7 +51,16 @@ func main() {
 		log.Fatalf("could not greet: %v", err)
 	}
 
-	// antes de finalizar imprime a mensagem
+	// imprime a resposta recebida
 	log.Printf("Greeting: %s", r.GetMessage())
 
+	// ----- Ampliação INICIO -----
+	r, err = c.SayHelloAgain(ctx, &pb.HelloRequest{Name: *name})
+	if err != nil {
+		log.Fatalf("could not greet: %v", err)
+	}
+	// ----- Ampliação FIM -----
+
+	// antes de finalizar imprime a mensagem
+	log.Printf("Greeting: %s", r.GetMessage())
 }
