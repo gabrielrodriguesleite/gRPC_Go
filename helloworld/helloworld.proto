@@ -6,8 +6,11 @@ package helloworld;
 
 // Definição do serviço
 service Greeter {
-  // chamada no cliente ?
+  // chamada no cliente
   rpc SayHello (HelloRequest) returns (HelloReply) {}
+
+  // novo metodo do serviço
+  rpc SayHelloAgain (HelloRequest) returns (HelloReply) {}
 }
 
 
