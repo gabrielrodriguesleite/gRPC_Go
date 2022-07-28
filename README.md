@@ -31,6 +31,17 @@ Para gerar os arquivos Go com base no protobuffer definido execute:
 
 `make generate`
 
+###### EM CASO DE ERRO
+
+Inclua a seguinte linha no final do arquivo `~/.bashrc` ou `~/.zshrc`
+
+```sh
+# PROTO GO plugins
+export PATH=$PATH:$(go env GOPATH)/bin
+```
+
+Para carregar as configurações refaça o login ou execute `~/.bashrc` ou `source ~/.zshrc`
+
 ## Executar o Servidor
 
 Em um terminal rode:
@@ -77,3 +88,10 @@ Saída:
 https://adevait.com/go/transcoding-of-http-json-to-grpc-using-go
 https://github.com/felipeagger/gRPC/
 https://www.youtube.com/watch?v=LuS59XHdKG8
+
+###### Protoc generate command
+```sh
+protoc --go_out=. --go_opt=paths=source_relative \
+  --go-grpc_out=. --go-grpc_opt=paths=source_relative \
+  helloworld/helloworld.proto
+```
