@@ -40,7 +40,7 @@ Inclua a seguinte linha no final do arquivo `~/.bashrc` ou `~/.zshrc`
 export PATH=$PATH:$(go env GOPATH)/bin
 ```
 
-Para carregar as configurações refaça o login ou execute `~/.bashrc` ou `source ~/.zshrc`
+Para carregar as configurações refaça o login ou execute `source ~/.bashrc` ou `source ~/.zshrc`
 
 ## Executar o Servidor
 
